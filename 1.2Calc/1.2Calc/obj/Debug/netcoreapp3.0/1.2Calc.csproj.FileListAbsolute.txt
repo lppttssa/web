@@ -1,0 +1,11 @@
+C:\Users\lpptt\Desktop\3sem\C#\web\1.2Calc\1.2Calc\bin\Debug\netcoreapp3.0\1.2Calc.exe
+C:\Users\lpptt\Desktop\3sem\C#\web\1.2Calc\1.2Calc\bin\Debug\netcoreapp3.0\1.2Calc.deps.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.2Calc\1.2Calc\bin\Debug\netcoreapp3.0\1.2Calc.runtimeconfig.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.2Calc\1.2Calc\bin\Debug\netcoreapp3.0\1.2Calc.runtimeconfig.dev.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.2Calc\1.2Calc\bin\Debug\netcoreapp3.0\1.2Calc.dll
+C:\Users\lpptt\Desktop\3sem\C#\web\1.2Calc\1.2Calc\bin\Debug\netcoreapp3.0\1.2Calc.pdb
+C:\Users\lpptt\Desktop\3sem\C#\web\1.2Calc\1.2Calc\obj\Debug\netcoreapp3.0\1.2Calc.csprojAssemblyReference.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\1.2Calc\1.2Calc\obj\Debug\netcoreapp3.0\1.2Calc.AssemblyInfoInputs.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\1.2Calc\1.2Calc\obj\Debug\netcoreapp3.0\1.2Calc.AssemblyInfo.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\1.2Calc\1.2Calc\obj\Debug\netcoreapp3.0\1.2Calc.dll
+C:\Users\lpptt\Desktop\3sem\C#\web\1.2Calc\1.2Calc\obj\Debug\netcoreapp3.0\1.2Calc.pdb
