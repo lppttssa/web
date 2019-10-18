@@ -1,0 +1,11 @@
+C:\Users\lpptt\Desktop\3sem\C#\web\1.4ArrSort\1.4ArrSort\bin\Debug\netcoreapp3.0\1.4ArrSort.exe
+C:\Users\lpptt\Desktop\3sem\C#\web\1.4ArrSort\1.4ArrSort\bin\Debug\netcoreapp3.0\1.4ArrSort.deps.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.4ArrSort\1.4ArrSort\bin\Debug\netcoreapp3.0\1.4ArrSort.runtimeconfig.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.4ArrSort\1.4ArrSort\bin\Debug\netcoreapp3.0\1.4ArrSort.runtimeconfig.dev.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.4ArrSort\1.4ArrSort\bin\Debug\netcoreapp3.0\1.4ArrSort.dll
+C:\Users\lpptt\Desktop\3sem\C#\web\1.4ArrSort\1.4ArrSort\bin\Debug\netcoreapp3.0\1.4ArrSort.pdb
+C:\Users\lpptt\Desktop\3sem\C#\web\1.4ArrSort\1.4ArrSort\obj\Debug\netcoreapp3.0\1.4ArrSort.csprojAssemblyReference.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\1.4ArrSort\1.4ArrSort\obj\Debug\netcoreapp3.0\1.4ArrSort.AssemblyInfoInputs.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\1.4ArrSort\1.4ArrSort\obj\Debug\netcoreapp3.0\1.4ArrSort.AssemblyInfo.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\1.4ArrSort\1.4ArrSort\obj\Debug\netcoreapp3.0\1.4ArrSort.dll
+C:\Users\lpptt\Desktop\3sem\C#\web\1.4ArrSort\1.4ArrSort\obj\Debug\netcoreapp3.0\1.4ArrSort.pdb
