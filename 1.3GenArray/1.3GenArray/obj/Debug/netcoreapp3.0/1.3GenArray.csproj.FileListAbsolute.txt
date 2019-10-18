@@ -1,0 +1,11 @@
+C:\Users\lpptt\Desktop\3sem\C#\web\1.3GenArray\1.3GenArray\bin\Debug\netcoreapp3.0\1.3GenArray.exe
+C:\Users\lpptt\Desktop\3sem\C#\web\1.3GenArray\1.3GenArray\bin\Debug\netcoreapp3.0\1.3GenArray.deps.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.3GenArray\1.3GenArray\bin\Debug\netcoreapp3.0\1.3GenArray.runtimeconfig.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.3GenArray\1.3GenArray\bin\Debug\netcoreapp3.0\1.3GenArray.runtimeconfig.dev.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.3GenArray\1.3GenArray\bin\Debug\netcoreapp3.0\1.3GenArray.dll
+C:\Users\lpptt\Desktop\3sem\C#\web\1.3GenArray\1.3GenArray\bin\Debug\netcoreapp3.0\1.3GenArray.pdb
+C:\Users\lpptt\Desktop\3sem\C#\web\1.3GenArray\1.3GenArray\obj\Debug\netcoreapp3.0\1.3GenArray.csprojAssemblyReference.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\1.3GenArray\1.3GenArray\obj\Debug\netcoreapp3.0\1.3GenArray.AssemblyInfoInputs.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\1.3GenArray\1.3GenArray\obj\Debug\netcoreapp3.0\1.3GenArray.AssemblyInfo.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\1.3GenArray\1.3GenArray\obj\Debug\netcoreapp3.0\1.3GenArray.dll
+C:\Users\lpptt\Desktop\3sem\C#\web\1.3GenArray\1.3GenArray\obj\Debug\netcoreapp3.0\1.3GenArray.pdb
