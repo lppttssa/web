@@ -1,0 +1,11 @@
+C:\Users\lpptt\Desktop\3sem\C#\web\1.6Text\1.6Text\bin\Debug\netcoreapp3.0\1.6Text.exe
+C:\Users\lpptt\Desktop\3sem\C#\web\1.6Text\1.6Text\bin\Debug\netcoreapp3.0\1.6Text.deps.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.6Text\1.6Text\bin\Debug\netcoreapp3.0\1.6Text.runtimeconfig.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.6Text\1.6Text\bin\Debug\netcoreapp3.0\1.6Text.runtimeconfig.dev.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.6Text\1.6Text\bin\Debug\netcoreapp3.0\1.6Text.dll
+C:\Users\lpptt\Desktop\3sem\C#\web\1.6Text\1.6Text\bin\Debug\netcoreapp3.0\1.6Text.pdb
+C:\Users\lpptt\Desktop\3sem\C#\web\1.6Text\1.6Text\obj\Debug\netcoreapp3.0\1.6Text.csprojAssemblyReference.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\1.6Text\1.6Text\obj\Debug\netcoreapp3.0\1.6Text.AssemblyInfoInputs.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\1.6Text\1.6Text\obj\Debug\netcoreapp3.0\1.6Text.AssemblyInfo.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\1.6Text\1.6Text\obj\Debug\netcoreapp3.0\1.6Text.dll
+C:\Users\lpptt\Desktop\3sem\C#\web\1.6Text\1.6Text\obj\Debug\netcoreapp3.0\1.6Text.pdb
