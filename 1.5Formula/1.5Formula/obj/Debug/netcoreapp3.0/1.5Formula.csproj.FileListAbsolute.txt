@@ -1,0 +1,11 @@
+C:\Users\lpptt\Desktop\3sem\C#\web\1.5Formula\1.5Formula\bin\Debug\netcoreapp3.0\1.5Formula.exe
+C:\Users\lpptt\Desktop\3sem\C#\web\1.5Formula\1.5Formula\bin\Debug\netcoreapp3.0\1.5Formula.deps.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.5Formula\1.5Formula\bin\Debug\netcoreapp3.0\1.5Formula.runtimeconfig.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.5Formula\1.5Formula\bin\Debug\netcoreapp3.0\1.5Formula.runtimeconfig.dev.json
+C:\Users\lpptt\Desktop\3sem\C#\web\1.5Formula\1.5Formula\bin\Debug\netcoreapp3.0\1.5Formula.dll
+C:\Users\lpptt\Desktop\3sem\C#\web\1.5Formula\1.5Formula\bin\Debug\netcoreapp3.0\1.5Formula.pdb
+C:\Users\lpptt\Desktop\3sem\C#\web\1.5Formula\1.5Formula\obj\Debug\netcoreapp3.0\1.5Formula.csprojAssemblyReference.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\1.5Formula\1.5Formula\obj\Debug\netcoreapp3.0\1.5Formula.AssemblyInfoInputs.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\1.5Formula\1.5Formula\obj\Debug\netcoreapp3.0\1.5Formula.AssemblyInfo.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\1.5Formula\1.5Formula\obj\Debug\netcoreapp3.0\1.5Formula.dll
+C:\Users\lpptt\Desktop\3sem\C#\web\1.5Formula\1.5Formula\obj\Debug\netcoreapp3.0\1.5Formula.pdb
