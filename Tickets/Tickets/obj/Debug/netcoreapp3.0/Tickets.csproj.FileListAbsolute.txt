@@ -1,0 +1,11 @@
+C:\Users\lpptt\Desktop\3sem\C#\web\Tickets\Tickets\bin\Debug\netcoreapp3.0\Tickets.exe
+C:\Users\lpptt\Desktop\3sem\C#\web\Tickets\Tickets\bin\Debug\netcoreapp3.0\Tickets.deps.json
+C:\Users\lpptt\Desktop\3sem\C#\web\Tickets\Tickets\bin\Debug\netcoreapp3.0\Tickets.runtimeconfig.json
+C:\Users\lpptt\Desktop\3sem\C#\web\Tickets\Tickets\bin\Debug\netcoreapp3.0\Tickets.runtimeconfig.dev.json
+C:\Users\lpptt\Desktop\3sem\C#\web\Tickets\Tickets\bin\Debug\netcoreapp3.0\Tickets.dll
+C:\Users\lpptt\Desktop\3sem\C#\web\Tickets\Tickets\bin\Debug\netcoreapp3.0\Tickets.pdb
+C:\Users\lpptt\Desktop\3sem\C#\web\Tickets\Tickets\obj\Debug\netcoreapp3.0\Tickets.csprojAssemblyReference.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\Tickets\Tickets\obj\Debug\netcoreapp3.0\Tickets.AssemblyInfoInputs.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\Tickets\Tickets\obj\Debug\netcoreapp3.0\Tickets.AssemblyInfo.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\Tickets\Tickets\obj\Debug\netcoreapp3.0\Tickets.dll
+C:\Users\lpptt\Desktop\3sem\C#\web\Tickets\Tickets\obj\Debug\netcoreapp3.0\Tickets.pdb
