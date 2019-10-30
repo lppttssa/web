@@ -23,6 +23,32 @@ namespace Tickets
             
         }
 
+        static public void TheMostExperienced(List<Ticket> list)
+        {
+            int exp = 0;
+
+            List<Ticket> res = new List<Ticket>();
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                int mem = PilotManager.pilots.Find(x => x.id == list[i].id_pil).exp;
+                if (mem > exp)
+                {
+                    exp = mem;
+                }
+            }
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (PilotManager.pilots.Find(x => x.id == list[i].id_pil).exp == exp)
+                {
+                    res.Add(list[i]);
+                }
+            }
+
+            Print(res);
+        }
+
         static public void Select(string from, string to, int year,int month,int day)
         {
             var index_from = CityManager.cities.FindIndex(x => x.city == from);
@@ -40,6 +66,16 @@ namespace Tickets
                 return;
             }
 
+            Print(list);
+
+            Console.WriteLine();
+            TheCheapest(list);
+            Console.WriteLine();
+            TheMostExperienced(list);
+        }
+
+        static private void Print(List<Ticket> list)
+        {
             for (var i = 0; i < list.Count; i++)
             {
                 Console.Write($"{list[i].id} | {CityManager.cities.Find(x => x.id == list[i].id_out).city} => " +
@@ -48,9 +84,7 @@ namespace Tickets
                     $"{PilotManager.pilots.Find(x => x.id == list[i].id_pil).name}");
                 Console.WriteLine();
             }
-
-            Console.WriteLine();
-            TheCheapest(list);
         }
+
     }
 }

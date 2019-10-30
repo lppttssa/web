@@ -36,8 +36,8 @@ namespace Tickets
             CompanyManager.GetAll();
             Console.WriteLine();
             CompanyManager.Delete(4);
-            CompanyManager.Add(4, "Air Japan");
             CompanyManager.GetAll();
+            CompanyManager.Add(4, "Air Japan");
             Console.WriteLine();
             CompanyManager.GetById(1);
 
@@ -53,13 +53,13 @@ namespace Tickets
             PilotManager.ChangeCId(1, 1);
             PilotManager.ChangeExp(1, 6);
             PilotManager.Add(2, 2, "Lui Mua", 10);
-            PilotManager.Add(3, 3, "Jon Nji", 2);
+            PilotManager.Add(3, 3, "Jon Nji", 15);
             PilotManager.Add(4, 4, "Hiro Soki", 15);
             PilotManager.GetAll();
             Console.WriteLine();
             PilotManager.Delete(4);
-            PilotManager.Add(4, 4, "Hiro Soki", 15);
             PilotManager.GetAll();
+            PilotManager.Add(4, 4, "Hiro Soki", 15);
             Console.WriteLine();
             PilotManager.GetById(1);
 
