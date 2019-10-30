@@ -53,25 +53,33 @@ namespace Tickets
         {
             var index_from = CityManager.cities.FindIndex(x => x.city == from);
             var index_to = CityManager.cities.FindIndex(x => x.city == to);
-            List<Ticket> list = new List<Ticket>();
-            list = TicketManager.tickets.FindAll(x => x.id_out == CityManager.cities[index_from].id);
-            list = list.FindAll(x => x.id_in == CityManager.cities[index_to].id);
-            list = list.FindAll(x => x.date.Year == year);
-            list = list.FindAll(x => x.date.Month == month);
-            list = list.FindAll(x => x.date.Day == day);
-
-            if (list.Count == 0)
+            try
             {
-                Console.WriteLine("No tickets for these days");
-                return;
+                List<Ticket> list = new List<Ticket>();
+                list = TicketManager.tickets.FindAll(x => x.id_out == CityManager.cities[index_from].id);
+                list = list.FindAll(x => x.id_in == CityManager.cities[index_to].id);
+                list = list.FindAll(x => x.date.Year == year);
+                list = list.FindAll(x => x.date.Month == month);
+                list = list.FindAll(x => x.date.Day == day);
+
+                if (list.Count == 0)
+                {
+                    Console.WriteLine("No tickets for these days");
+                    return;
+                }
+
+                Print(list);
+
+                Console.WriteLine();
+                TheCheapest(list);
+                Console.WriteLine();
+                TheMostExperienced(list);
             }
-
-            Print(list);
-
-            Console.WriteLine();
-            TheCheapest(list);
-            Console.WriteLine();
-            TheMostExperienced(list);
+            catch
+            {
+                Console.WriteLine("Sorry, couldn't select the tickets with such parameters!");
+            }
+            
         }
 
         static private void Print(List<Ticket> list)

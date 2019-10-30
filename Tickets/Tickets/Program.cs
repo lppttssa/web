@@ -67,6 +67,8 @@ namespace Tickets
             PilotManager.ChangeId(15, 16);
             Console.WriteLine();
             PilotManager.ChangeCId(1, 1);
+            PilotManager.ChangeCId(1, 9);
+            Console.WriteLine();
             PilotManager.ChangeExp(1, 6);
             PilotManager.Add(2, 2, "Lui Mua", 10);
             PilotManager.Add(3, 3, "Jon Nji", 15);
@@ -76,10 +78,13 @@ namespace Tickets
             PilotManager.GetAll();
             Console.WriteLine();
             PilotManager.Delete(4);
+            PilotManager.Delete(10);
+            Console.WriteLine();
             PilotManager.GetAll();
             PilotManager.Add(4, 4, "Hiro Soki", 15);
             Console.WriteLine();
             PilotManager.GetById(1);
+            PilotManager.GetById(10);
 
             Console.WriteLine();
             Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
@@ -89,8 +94,14 @@ namespace Tickets
             TicketManager.GetAll();
             Console.WriteLine();
             TicketManager.ChangeId(0, 1);
+            TicketManager.ChangeId(11, 1);
+            Console.WriteLine();
             TicketManager.ChangePrice(1, 100);
+            TicketManager.ChangePrice(11, 100);
+            Console.WriteLine();
             TicketManager.Add(2, 4, 1, 2019, 10, 06, 11, 00, 00, 200, 1, 1);
+            TicketManager.Add(2, 4, 1, 2019, 10, 06, 11, 00, 00, 200, 1, 1);
+            Console.WriteLine();
             TicketManager.Add(3, 3, 4, 2019, 10, 07, 12, 25, 00, 300, 3, 3);
             TicketManager.Add(4, 2, 3, 2019, 10, 08, 13, 45, 00, 400, 4, 4);
             TicketManager.Add(5, 1, 2, 2019, 10, 05, 17, 45, 00, 400, 4, 4);
@@ -100,16 +111,23 @@ namespace Tickets
             TicketManager.GetAll();
             Console.WriteLine();
             TicketManager.Delete(8);
+            TicketManager.Delete(15);
+            Console.WriteLine();
             TicketManager.GetAll();
             TicketManager.Add(8, 1, 2, 2019, 11, 05, 14, 45, 00, 340, 1, 1);
             Console.WriteLine();
             TicketManager.GetById(1);
+            TicketManager.GetById(11);
 
             Console.WriteLine();
             Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
             Console.WriteLine();
 
             TicketFinder.Select("Paris", "Moscow", 2019, 10, 05);
+            Console.WriteLine();
+            TicketFinder.Select("Moscow", "Paris", 2019, 10, 05);
+            Console.WriteLine();
+            TicketFinder.Select("London", "Paris", 2019, 10, 05);
 
             Console.WriteLine();
             Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");

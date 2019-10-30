@@ -24,7 +24,9 @@ namespace Tickets
                 Console.WriteLine("Sorry, the new id is not appropriate!");
                 return;
             }
+
             var index = pilots.FindIndex(x => x.id == current_id);
+
             try
             {
                 pilots[index].id = new_id;
@@ -37,20 +39,49 @@ namespace Tickets
 
         static public void ChangeCId(int i, int new_id)
         {
+            if (CompanyManager.companies.FindIndex(x => x.id == new_id) == -1)
+            {
+                Console.WriteLine("Sorry, the id is not appropriate!");
+                return;
+            }
+
             var index = pilots.FindIndex(x => x.id == i);
-            pilots[index].c_id = new_id;
+
+            try
+            {
+                pilots[index].c_id = new_id;
+            }
+            catch
+            {
+                Console.WriteLine("Sorry, couldn't find the pilot with such id!");
+            }
         }
 
         static public void ChangeExp(int i, int new_exp)
         {
             var index = pilots.FindIndex(x => x.id == i);
-            pilots[index].exp = new_exp;
+           
+            try
+            {
+                pilots[index].exp = new_exp;
+            }
+            catch
+            {
+                Console.WriteLine("Sorry, couldn't find the pilot with such id!");
+            }
         }
 
         static public void Delete(int id)
         {
             var index = pilots.FindIndex(x => x.id == id);
-            pilots.RemoveAt(index);
+            try
+            {
+                pilots.RemoveAt(index);
+            }
+            catch
+            {
+                Console.WriteLine("Sorry, couldn't delete the pilot with such id!");
+            }
         }
         static public void GetAll()
         {
@@ -63,8 +94,14 @@ namespace Tickets
 
         static public void GetById(int i)
         {
-            Console.Write($"{pilots[i - 1].id} {pilots[i - 1].c_id} {pilots[i - 1].name} {pilots[i - 1].exp}");
-            Console.WriteLine();
+            try
+            {
+                Console.WriteLine($"{pilots[i - 1].id} {pilots[i - 1].c_id} {pilots[i - 1].name} {pilots[i - 1].exp}");
+            }
+            catch
+            {
+                Console.WriteLine("Sorry, couldn't find the pilot with such id!");
+            }
         }
     }
 }
