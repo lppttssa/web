@@ -6,20 +6,51 @@ namespace Tickets
 {
     class TicketFinder
     {
-        public void TheCheapest(string from, string to)
+        static public void TheCheapest(List<Ticket> list)
         {
-            Ticket t;
-            var index_from = CityManager.cities.FindIndex(x => x.city == from);
-            var index_to = CityManager.cities.FindIndex(x => x.city == to);
-            if (index_from == -1 || index_to == -1)
+            Ticket t = null;
+            int price = 10000;
+
+            for (int i = 0; i < list.Count; i++)
             {
-                Console.WriteLine("No tickets for such cities available");
+                if (list[i].price < price)
+                {
+                    t = list[i];
+                    price = list[i].price;
+                }
             }
-            for (int i = 0; i < TicketManager.tickets.Count; i++)
-            {
-                if (TicketManager.tickets[i].id_out == CityManager.cities[index_from].id)
-            }
+            TicketManager.GetById(t.id);
+            
         }
 
+        static public void Select(string from, string to, int year,int month,int day)
+        {
+            var index_from = CityManager.cities.FindIndex(x => x.city == from);
+            var index_to = CityManager.cities.FindIndex(x => x.city == to);
+            List<Ticket> list = new List<Ticket>();
+            list = TicketManager.tickets.FindAll(x => x.id_out == CityManager.cities[index_from].id);
+            list = list.FindAll(x => x.id_in == CityManager.cities[index_to].id);
+            list = list.FindAll(x => x.date.Year == year);
+            list = list.FindAll(x => x.date.Month == month);
+            list = list.FindAll(x => x.date.Day == day);
+
+            if (list.Count == 0)
+            {
+                Console.WriteLine("No tickets for these days");
+                return;
+            }
+
+            for (var i = 0; i < list.Count; i++)
+            {
+                Console.Write($"{list[i].id} | {CityManager.cities.Find(x => x.id == list[i].id_out).city} => " +
+                    $"{CityManager.cities.Find(x => x.id == list[i].id_in).city} | {list[i].date} | " +
+                    $"{list[i].price}$ | {CompanyManager.companies.Find(x => x.id == list[i].id_com).company} | " +
+                    $"{PilotManager.pilots.Find(x => x.id == list[i].id_pil).name}");
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+            TheCheapest(list);
+        }
     }
 }
