@@ -9,25 +9,36 @@ namespace Tickets
         static public List<Pilot> pilots = new List<Pilot>();
         static public void Add(int id, int c_id, string name, int exp)
         {
-            pilots.Add(new Pilot(id, c_id, name, exp));
+            if (pilots.FindIndex(x => x.id == id) == -1)
+            {
+                pilots.Add(new Pilot(id, c_id, name, exp));
+                return;
+            }
+            Console.WriteLine("Sorry, couldn't add the pilot!");
         }
 
         static public void ChangeId(int current_id, int new_id)
         {
+            if (pilots.FindIndex(x => x.id == new_id) != -1)
+            {
+                Console.WriteLine("Sorry, the new id is not appropriate!");
+                return;
+            }
             var index = pilots.FindIndex(x => x.id == current_id);
-            pilots[index].id = new_id;
+            try
+            {
+                pilots[index].id = new_id;
+            }
+            catch
+            {
+                Console.WriteLine("Sorry, couldn't find the pilot with such id!");
+            }
         }
 
         static public void ChangeCId(int i, int new_id)
         {
             var index = pilots.FindIndex(x => x.id == i);
             pilots[index].c_id = new_id;
-        }
-
-        static public void ChangeName(int i, string new_name)
-        {
-            var index = pilots.FindIndex(x => x.id == i);
-            pilots[index].name = new_name;
         }
 
         static public void ChangeExp(int i, int new_exp)

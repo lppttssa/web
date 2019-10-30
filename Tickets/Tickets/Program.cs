@@ -16,11 +16,19 @@ namespace Tickets
             CityManager.Add(4, "Berlin");
             CityManager.GetAll();
             Console.WriteLine();
+            CityManager.Change(10, 15);
+            Console.WriteLine();
             CityManager.Delete(4);
+            CityManager.Delete(15);
+            Console.WriteLine();
             CityManager.GetAll();
             CityManager.Add(4, "Berlin");
             Console.WriteLine();
             CityManager.GetById(1);
+            CityManager.GetById(10);
+            Console.WriteLine();
+            CityManager.Add(4, "Vena");
+            CityManager.Add(6, "Berlin");
 
             Console.WriteLine();
             Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
@@ -33,13 +41,20 @@ namespace Tickets
             CompanyManager.Add(2, "Air France");
             CompanyManager.Add(3, "Korean Air");
             CompanyManager.Add(4, "Air Japan");
+            CompanyManager.Add(4, "Air Japan");
+            Console.WriteLine();
+            CompanyManager.Change(10, 3);
+            Console.WriteLine();
             CompanyManager.GetAll();
             Console.WriteLine();
             CompanyManager.Delete(4);
             CompanyManager.GetAll();
+            Console.WriteLine();
+            CompanyManager.Delete(8);
             CompanyManager.Add(4, "Air Japan");
             Console.WriteLine();
             CompanyManager.GetById(1);
+            CompanyManager.GetById(10);
 
             Console.WriteLine();
             Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
@@ -49,12 +64,15 @@ namespace Tickets
             PilotManager.GetAll();
             Console.WriteLine();
             PilotManager.ChangeId(0, 1);
-            PilotManager.ChangeName(1, "Igor Drozd");
+            PilotManager.ChangeId(15, 16);
+            Console.WriteLine();
             PilotManager.ChangeCId(1, 1);
             PilotManager.ChangeExp(1, 6);
             PilotManager.Add(2, 2, "Lui Mua", 10);
             PilotManager.Add(3, 3, "Jon Nji", 15);
             PilotManager.Add(4, 4, "Hiro Soki", 15);
+            PilotManager.Add(4, 4, "Hiro Soki", 15);
+            Console.WriteLine();
             PilotManager.GetAll();
             Console.WriteLine();
             PilotManager.Delete(4);
