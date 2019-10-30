@@ -78,11 +78,12 @@ namespace Tickets
             TicketManager.Add(5, 1, 2, 2019, 10, 05, 17, 45, 00, 400, 4, 4);
             TicketManager.Add(6, 1, 2, 2019, 10, 05, 19, 45, 00, 230, 3, 3);
             TicketManager.Add(7, 1, 2, 2019, 10, 05, 14, 45, 00, 340, 1, 1);
+            TicketManager.Add(8, 1, 2, 2019, 11, 05, 14, 45, 00, 340, 1, 1);
             TicketManager.GetAll();
             Console.WriteLine();
-            TicketManager.Delete(4);
+            TicketManager.Delete(8);
             TicketManager.GetAll();
-            TicketManager.Add(4, 2, 3, 2019, 10, 08, 13, 45, 00, 400, 4, 4);
+            TicketManager.Add(8, 1, 2, 2019, 11, 05, 14, 45, 00, 340, 1, 1);
             Console.WriteLine();
             TicketManager.GetById(1);
 
@@ -92,6 +93,29 @@ namespace Tickets
 
             TicketFinder.Select("Paris", "Moscow", 2019, 10, 05);
 
+            Console.WriteLine();
+            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine();
+
+            TicketSeller.Buy(1);
+            Console.WriteLine();
+            TicketSeller.Buy(15);
+            Console.WriteLine();
+            TicketManager.GetAll();
+
+            Console.WriteLine();
+            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine();
+
+            Bank.GetCredit();
+            Console.WriteLine();
+            Bank.GetCredit();
+            Console.WriteLine();
+            Bank.GetCredit();
+            Console.WriteLine();
+            Bank.GetCredit();
+            Console.WriteLine();
+            Bank.GetCredit();
         }
     }
 }
