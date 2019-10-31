@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Tickets
 {
-    class PilotManager
+    static class PilotManager
     {
         public static List<Pilot> pilots = new List<Pilot>();
         public static void Add(int id, int c_id, string name, int exp)
         {
-            if (pilots.FindIndex(x => x.id == id) == -1)
+            if ((pilots.FindIndex(x => x.id == id) == -1) && (CompanyManager.companies.FindIndex(x => x.id == c_id) != -1))
             {
                 pilots.Add(new Pilot(id, c_id, name, exp));
                 return;
@@ -36,27 +36,6 @@ namespace Tickets
                 Console.WriteLine("Sorry, couldn't find the pilot with such id!");
             }
         }
-
-        public static void ChangeCId(int i, int new_id)
-        {
-            if (CompanyManager.companies.FindIndex(x => x.id == new_id) == -1)
-            {
-                Console.WriteLine("Sorry, the id is not appropriate!");
-                return;
-            }
-
-            var index = pilots.FindIndex(x => x.id == i);
-
-            try
-            {
-                pilots[index].c_id = new_id;
-            }
-            catch
-            {
-                Console.WriteLine("Sorry, couldn't find the pilot with such id!");
-            }
-        }
-
         public static void ChangeExp(int i, int new_exp)
         {
             var index = pilots.FindIndex(x => x.id == i);

@@ -9,15 +9,22 @@ namespace Tickets
         public static List<Ticket> tickets = new List<Ticket>();
 
         public static void Add(int id, int id_out, int id_in, int y, int mon, int d, int h, 
-            int min, int s, int price, int id_c, int id_p)
+            int min, int price, int id_c, int id_p, int s = 0)
         {
             if (tickets.FindIndex(x => x.id == id) == -1 && CityManager.cities.FindIndex(x => x.id != id_out) != -1 &&
                 CityManager.cities.FindIndex(x => x.id == id_in) != -1 && CompanyManager.companies.FindIndex(x => x.id == id_c) != -1 &&
                 PilotManager.pilots.FindIndex(x => x.id == id_p) != -1)
             {
-                DateTime date = new DateTime(y, mon, d, h, min, s);
-                tickets.Add(new Ticket(id, id_out, id_in, date, price, id_c, id_p));
-                return;
+                try
+                {
+                    DateTime date = new DateTime(y, mon, d, h, min, s);
+                    tickets.Add(new Ticket(id, id_out, id_in, date, price, id_c, id_p));
+                    return;
+                }
+                catch
+                {
+                    Console.WriteLine("Sorry, couldn't add!");
+                }
             }
 
             Console.WriteLine("Sorry, couldn't add the ticket!");
