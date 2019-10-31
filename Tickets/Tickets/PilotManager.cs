@@ -6,8 +6,8 @@ namespace Tickets
 {
     class PilotManager
     {
-        static public List<Pilot> pilots = new List<Pilot>();
-        static public void Add(int id, int c_id, string name, int exp)
+        public static List<Pilot> pilots = new List<Pilot>();
+        public static void Add(int id, int c_id, string name, int exp)
         {
             if (pilots.FindIndex(x => x.id == id) == -1)
             {
@@ -17,7 +17,7 @@ namespace Tickets
             Console.WriteLine("Sorry, couldn't add the pilot!");
         }
 
-        static public void ChangeId(int current_id, int new_id)
+        public static void ChangeId(int current_id, int new_id)
         {
             if (pilots.FindIndex(x => x.id == new_id) != -1)
             {
@@ -37,7 +37,7 @@ namespace Tickets
             }
         }
 
-        static public void ChangeCId(int i, int new_id)
+        public static void ChangeCId(int i, int new_id)
         {
             if (CompanyManager.companies.FindIndex(x => x.id == new_id) == -1)
             {
@@ -57,7 +57,7 @@ namespace Tickets
             }
         }
 
-        static public void ChangeExp(int i, int new_exp)
+        public static void ChangeExp(int i, int new_exp)
         {
             var index = pilots.FindIndex(x => x.id == i);
            
@@ -71,7 +71,7 @@ namespace Tickets
             }
         }
 
-        static public void Delete(int id)
+        public static void Delete(int id)
         {
             var index = pilots.FindIndex(x => x.id == id);
             try
@@ -83,7 +83,7 @@ namespace Tickets
                 Console.WriteLine("Sorry, couldn't delete the pilot with such id!");
             }
         }
-        static public void GetAll()
+        public static void GetAll()
         {
             for (var i = 0; i < pilots.Count; i++)
             {
@@ -92,7 +92,7 @@ namespace Tickets
             }
         }
 
-        static public void GetById(int i)
+        public static void GetById(int i)
         {
             try
             {

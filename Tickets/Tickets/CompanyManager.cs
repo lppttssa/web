@@ -6,8 +6,8 @@ namespace Tickets
 {
     class CompanyManager
     {
-        static public List<Company> companies = new List<Company>();
-        static public void Add(int id, string name)
+        public static List<Company> companies = new List<Company>();
+        public static void Add(int id, string name)
         {
             if (companies.FindIndex(x => x.id == id) == -1 && companies.FindIndex(x => x.company == name) == -1)
             {
@@ -17,7 +17,7 @@ namespace Tickets
             Console.WriteLine("Sorry, couldn't add the company!");
         }
 
-        static public void Change(int current_id, int new_id)
+        public static void Change(int current_id, int new_id)
         {
             if (companies.FindIndex(x => x.id == new_id) != -1)
             {
@@ -35,7 +35,25 @@ namespace Tickets
             }
         }
 
-        static public void Delete(int id)
+        public static void Change(int current_id, string new_name)
+        {
+            if (companies.FindIndex(x => x.company == new_name) != -1)
+            {
+                Console.WriteLine("Sorry, the new name is not appropriate!");
+                return;
+            }
+            var index = companies.FindIndex(x => x.id == current_id);
+            try
+            {
+                companies[index].company = new_name;
+            }
+            catch
+            {
+                Console.WriteLine("Sorry, couldn't find the company with such id!");
+            }
+        }
+
+        public static void Delete(int id)
         {
             var index = companies.FindIndex(x => x.id == id);
 
@@ -48,7 +66,7 @@ namespace Tickets
                 Console.WriteLine("Sorry, couldn't delete the company with such id!");
             }
         }
-        static public void GetAll()
+        public static void GetAll()
         {
             for (var i = 0; i < companies.Count; i++)
             {
@@ -56,7 +74,7 @@ namespace Tickets
             }
         }
 
-        static public void GetById(int i)
+        public static void GetById(int i)
         {
             try
             {

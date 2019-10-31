@@ -34,10 +34,11 @@ namespace Tickets
             Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
             Console.WriteLine();
 
-            CompanyManager.Add(0, "Aeroflot");
+            CompanyManager.Add(0, "Aeroflo");
             CompanyManager.GetAll();
             Console.WriteLine();
             CompanyManager.Change(0, 1);
+            CompanyManager.Change(1, "Aeroflot");
             CompanyManager.Add(2, "Air France");
             CompanyManager.Add(3, "Korean Air");
             CompanyManager.Add(4, "Air Japan");

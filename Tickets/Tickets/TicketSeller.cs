@@ -6,7 +6,7 @@ namespace Tickets
 {
     class TicketSeller
     {
-        static public void Buy(int id)
+        public static void Buy(int id)
         {
             var index = TicketManager.tickets.FindIndex(x => x.id == id);
             

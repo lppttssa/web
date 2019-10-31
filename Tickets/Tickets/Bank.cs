@@ -6,7 +6,7 @@ namespace Tickets
 {
     class Bank
     {
-        static public void GetCredit()
+        public static void GetCredit()
         {
             Random random = new Random();
 

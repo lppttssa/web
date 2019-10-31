@@ -6,9 +6,9 @@ namespace Tickets
 {
     class TicketManager
     {
-        static public List<Ticket> tickets = new List<Ticket>();
+        public static List<Ticket> tickets = new List<Ticket>();
 
-        static public void Add(int id, int id_out, int id_in, int y, int mon, int d, int h, 
+        public static void Add(int id, int id_out, int id_in, int y, int mon, int d, int h, 
             int min, int s, int price, int id_c, int id_p)
         {
             if (tickets.FindIndex(x => x.id == id) == -1 && CityManager.cities.FindIndex(x => x.id != id_out) != -1 &&
@@ -23,7 +23,7 @@ namespace Tickets
             Console.WriteLine("Sorry, couldn't add the ticket!");
         }
 
-        static public void ChangeId(int current_id, int new_id)
+        public static void ChangeId(int current_id, int new_id)
         {
             if (tickets.FindIndex(x => x.id == new_id) != -1)
             {
@@ -43,7 +43,7 @@ namespace Tickets
             }
         }
 
-        static public void ChangePrice(int current_id, int new_price)
+        public static void ChangePrice(int current_id, int new_price)
         {
             var index = tickets.FindIndex(x => x.id == current_id);
             
@@ -57,7 +57,7 @@ namespace Tickets
             }
         }
 
-        static public void Delete(int id)
+        public static void Delete(int id)
         {
             var index = tickets.FindIndex(x => x.id == id);
             
@@ -71,7 +71,7 @@ namespace Tickets
             }
         }
 
-        static public void GetAll()
+        public static void GetAll()
         {
             for (var i = 0; i < tickets.Count; i++)
             {
@@ -83,7 +83,7 @@ namespace Tickets
             }
         }
 
-        static public void GetById(int i)
+        public static void GetById(int i)
         {
             try
             {

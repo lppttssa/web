@@ -6,7 +6,7 @@ namespace Tickets
 {
     class TicketFinder
     {
-        static public void TheCheapest(List<Ticket> list)
+        private static void TheCheapest(List<Ticket> list)
         {
             Ticket t = null;
             int price = 10000;
@@ -23,7 +23,7 @@ namespace Tickets
             
         }
 
-        static public void TheMostExperienced(List<Ticket> list)
+        private static void TheMostExperienced(List<Ticket> list)
         {
             int exp = 0;
 
@@ -49,7 +49,7 @@ namespace Tickets
             Print(res);
         }
 
-        static public void Select(string from, string to, int year,int month,int day)
+        public static void Select(string from, string to, int year,int month,int day)
         {
             var index_from = CityManager.cities.FindIndex(x => x.city == from);
             var index_to = CityManager.cities.FindIndex(x => x.city == to);
@@ -82,7 +82,7 @@ namespace Tickets
             
         }
 
-        static private void Print(List<Ticket> list)
+        private static void Print(List<Ticket> list)
         {
             for (var i = 0; i < list.Count; i++)
             {

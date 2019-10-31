@@ -6,8 +6,8 @@ namespace Tickets
 {
     class CityManager
     {
-        static public List<City> cities = new List<City>(); 
-        static public void Add(int id, string name)
+        public static List<City> cities = new List<City>(); 
+        public static void Add(int id, string name)
         {
             if (cities.FindIndex(x => x.id == id) == -1 && cities.FindIndex(x => x.city == name) == -1)
             {
@@ -18,7 +18,7 @@ namespace Tickets
             Console.WriteLine("Sorry, couldn't add the city!");
         }
 
-        static public void Change(int current_id, int new_id)
+        public static void Change(int current_id, int new_id)
         {
             if (cities.FindIndex(x => x.id == new_id) != -1)
             {
@@ -37,7 +37,7 @@ namespace Tickets
             
         }
 
-        static public void Delete(int id)
+        public static void Delete(int id)
         {
             var index = cities.FindIndex(x => x.id == id);
 
@@ -50,7 +50,7 @@ namespace Tickets
                 Console.WriteLine("Sorry, couldn't delete the city with such id!");
             }  
         }
-        static public void GetAll()
+        public static void GetAll()
         {
             for (var i = 0; i < cities.Count; i++)
             {
@@ -58,7 +58,7 @@ namespace Tickets
             }
         }
 
-        static public void GetById(int i)
+        public static void GetById(int i)
         {
             try
             {
