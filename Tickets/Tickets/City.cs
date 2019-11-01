@@ -6,7 +6,6 @@ namespace Tickets
 {
     class City : Inheritance
     {
-
         public City(int i, string c) { id = i; name = c; }
 
     }

@@ -117,7 +117,7 @@ namespace Tickets
                             string action = "n";
                             while (action != "exit")
                             {
-                                Console.Write("Choose your action: Add, Change, Delete, GetAll, GetById or exit: ");
+                                Console.Write("Choose your action: Add, ChangeId, ChangeName, Delete, GetAll, GetById or exit: ");
                                 action = Console.ReadLine();
                                 if (action == "Add")
                                 {
@@ -138,7 +138,7 @@ namespace Tickets
                                     }
 
                                 }
-                                else if (action == "Change")
+                                else if (action == "ChangeId")
                                 {
                                     Console.Write("Write company id: ");
                                     string id = Console.ReadLine();
@@ -149,6 +149,24 @@ namespace Tickets
                                         int i_id = Convert.ToInt32(id);
                                         int inew_id = Convert.ToInt32(new_id);
                                         CompanyManager.Change(i_id, inew_id);
+                                        Console.WriteLine();
+                                    }
+                                    catch
+                                    {
+                                        Console.WriteLine("Sorry! Wrong parameters!");
+                                        Console.WriteLine();
+                                    }
+                                }
+                                else if (action == "ChangeName")
+                                {
+                                    Console.Write("Write company id: ");
+                                    string id = Console.ReadLine();
+                                    Console.Write("Write new company name: ");
+                                    string new_name = Console.ReadLine();
+                                    try
+                                    {
+                                        int i_id = Convert.ToInt32(id);
+                                        CompanyManager.Change(i_id, new_name);
                                         Console.WriteLine();
                                     }
                                     catch
