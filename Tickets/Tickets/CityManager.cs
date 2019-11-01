@@ -62,7 +62,8 @@ namespace Tickets
         {
             try
             {
-                Console.WriteLine($"{cities[i - 1].id} {cities[i - 1].city}");
+                int index = cities.FindIndex(x => x.id == i);
+                Console.WriteLine($"{cities[index].id} {cities[index].city}");
             }
             catch
             {

@@ -75,7 +75,8 @@ namespace Tickets
         {
             try
             {
-                Console.WriteLine($"{pilots[i - 1].id} {pilots[i - 1].c_id} {pilots[i - 1].name} {pilots[i - 1].exp}");
+                int index = pilots.FindIndex(x => x.id == i);
+                Console.WriteLine($"{pilots[index].id} {pilots[index].c_id} {pilots[index].name} {pilots[index].exp}");
             }
             catch
             {

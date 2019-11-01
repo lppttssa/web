@@ -11,7 +11,7 @@ namespace Tickets
         public static void Add(int id, int id_out, int id_in, int y, int mon, int d, int h, 
             int min, int price, int id_c, int id_p, int s = 0)
         {
-            if (tickets.FindIndex(x => x.id == id) == -1 && CityManager.cities.FindIndex(x => x.id != id_out) != -1 &&
+            if (tickets.FindIndex(x => x.id == id) == -1 && CityManager.cities.FindIndex(x => x.id == id_out) != -1 &&
                 CityManager.cities.FindIndex(x => x.id == id_in) != -1 && CompanyManager.companies.FindIndex(x => x.id == id_c) != -1 &&
                 PilotManager.pilots.FindIndex(x => x.id == id_p) != -1)
             {
@@ -94,10 +94,11 @@ namespace Tickets
         {
             try
             {
-                Console.Write($"{tickets[i - 1].id} | {CityManager.cities.Find(x => x.id == tickets[i - 1].id_out).city} => " +
-                $"{CityManager.cities.Find(x => x.id == tickets[i - 1].id_in).city} | {tickets[i - 1].date} | " +
-                $"{tickets[i - 1].price}$ | {CompanyManager.companies.Find(x => x.id == tickets[i - 1].id_com).company} | " +
-                $"{PilotManager.pilots.Find(x => x.id == tickets[i - 1].id_pil).name}");
+                int index = tickets.FindIndex(x => x.id == i);
+                Console.Write($"{tickets[index].id} | {CityManager.cities.Find(x => x.id == tickets[index].id_out).city} => " +
+                $"{CityManager.cities.Find(x => x.id == tickets[index].id_in).city} | {tickets[index].date} | " +
+                $"{tickets[index].price}$ | {CompanyManager.companies.Find(x => x.id == tickets[index].id_com).company} | " +
+                $"{PilotManager.pilots.Find(x => x.id == tickets[index].id_pil).name}");
                 Console.WriteLine();
             }
             catch

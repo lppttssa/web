@@ -476,16 +476,12 @@ namespace Tickets
                 {
                     Console.Write("Write departure city: ");
                     string from = Console.ReadLine();
-                    Console.WriteLine();
                     Console.Write("Write arrival city: ");
                     string to = Console.ReadLine();
-                    Console.WriteLine();
                     Console.Write("Write departure year: ");
                     string y = Console.ReadLine();
-                    Console.WriteLine();
                     Console.Write("Write departure month: ");
                     string mon = Console.ReadLine();
-                    Console.WriteLine();
                     Console.Write("Write departure day: ");
                     string d = Console.ReadLine();
                     try
