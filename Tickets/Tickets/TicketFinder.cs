@@ -51,8 +51,8 @@ namespace Tickets
 
         public static void Select(string from, string to, int year,int month,int day)
         {
-            var index_from = CityManager.cities.FindIndex(x => x.city == from);
-            var index_to = CityManager.cities.FindIndex(x => x.city == to);
+            var index_from = CityManager.cities.FindIndex(x => x.name == from);
+            var index_to = CityManager.cities.FindIndex(x => x.name == to);
             try
             {
                 List<Ticket> list = new List<Ticket>();
@@ -86,9 +86,9 @@ namespace Tickets
         {
             for (var i = 0; i < list.Count; i++)
             {
-                Console.Write($"{list[i].id} | {CityManager.cities.Find(x => x.id == list[i].id_out).city} => " +
-                    $"{CityManager.cities.Find(x => x.id == list[i].id_in).city} | {list[i].date} | " +
-                    $"{list[i].price}$ | {CompanyManager.companies.Find(x => x.id == list[i].id_com).company} | " +
+                Console.Write($"{list[i].id} | {CityManager.cities.Find(x => x.id == list[i].id_out).name} => " +
+                    $"{CityManager.cities.Find(x => x.id == list[i].id_in).name} | {list[i].date} | " +
+                    $"{list[i].price}$ | {CompanyManager.companies.Find(x => x.id == list[i].id_com).name} | " +
                     $"{PilotManager.pilots.Find(x => x.id == list[i].id_pil).name}");
                 Console.WriteLine();
             }

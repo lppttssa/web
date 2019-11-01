@@ -82,9 +82,9 @@ namespace Tickets
         {
             for (var i = 0; i < tickets.Count; i++)
             {
-                Console.Write($"{tickets[i].id} | {CityManager.cities.Find(x => x.id == tickets[i].id_out).city} => " +
-                    $"{CityManager.cities.Find(x => x.id == tickets[i].id_in).city} | {tickets[i].date} | " +
-                    $"{tickets[i].price}$ | {CompanyManager.companies.Find(x => x.id == tickets[i].id_com).company} | " +
+                Console.Write($"{tickets[i].id} | {CityManager.cities.Find(x => x.id == tickets[i].id_out).name} => " +
+                    $"{CityManager.cities.Find(x => x.id == tickets[i].id_in).name} | {tickets[i].date} | " +
+                    $"{tickets[i].price}$ | {CompanyManager.companies.Find(x => x.id == tickets[i].id_com).name} | " +
                     $"{PilotManager.pilots.Find(x => x.id == tickets[i].id_pil).name}");
                 Console.WriteLine();
             }
@@ -95,9 +95,9 @@ namespace Tickets
             try
             {
                 int index = tickets.FindIndex(x => x.id == i);
-                Console.Write($"{tickets[index].id} | {CityManager.cities.Find(x => x.id == tickets[index].id_out).city} => " +
-                $"{CityManager.cities.Find(x => x.id == tickets[index].id_in).city} | {tickets[index].date} | " +
-                $"{tickets[index].price}$ | {CompanyManager.companies.Find(x => x.id == tickets[index].id_com).company} | " +
+                Console.Write($"{tickets[index].id} | {CityManager.cities.Find(x => x.id == tickets[index].id_out).name} => " +
+                $"{CityManager.cities.Find(x => x.id == tickets[index].id_in).name} | {tickets[index].date} | " +
+                $"{tickets[index].price}$ | {CompanyManager.companies.Find(x => x.id == tickets[index].id_com).name} | " +
                 $"{PilotManager.pilots.Find(x => x.id == tickets[index].id_pil).name}");
                 Console.WriteLine();
             }

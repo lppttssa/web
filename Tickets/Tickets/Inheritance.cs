@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Tickets
 {
-    class City : Inheritance
+    class Inheritance
     {
-
-        public City(int i, string c) { id = i; name = c; }
-
+        public int id;
+        public string name;
     }
 }

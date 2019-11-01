@@ -9,12 +9,12 @@ namespace Tickets
         public static List<Company> companies = new List<Company>();
         public static void Add(int id, string name)
         {
-            if (companies.FindIndex(x => x.id == id) == -1 && companies.FindIndex(x => x.company == name) == -1)
+            if (companies.FindIndex(x => x.id == id) == -1 && companies.FindIndex(x => x.name == name) == -1)
             {
                 companies.Add(new Company(id, name));
                 return;
             }
-            Console.WriteLine("Sorry, couldn't add the company!");
+            Console.WriteLine("Sorry, couldn't add the name!");
         }
 
         public static void Change(int current_id, int new_id)
@@ -31,13 +31,13 @@ namespace Tickets
             }
             catch
             {
-                Console.WriteLine("Sorry, couldn't find the company with such id!");
+                Console.WriteLine("Sorry, couldn't find the name with such id!");
             }
         }
 
         public static void Change(int current_id, string new_name)
         {
-            if (companies.FindIndex(x => x.company == new_name) != -1)
+            if (companies.FindIndex(x => x.name == new_name) != -1)
             {
                 Console.WriteLine("Sorry, the new name is not appropriate!");
                 return;
@@ -45,11 +45,11 @@ namespace Tickets
             var index = companies.FindIndex(x => x.id == current_id);
             try
             {
-                companies[index].company = new_name;
+                companies[index].name = new_name;
             }
             catch
             {
-                Console.WriteLine("Sorry, couldn't find the company with such id!");
+                Console.WriteLine("Sorry, couldn't find the name with such id!");
             }
         }
 
@@ -63,14 +63,14 @@ namespace Tickets
             }
             catch
             {
-                Console.WriteLine("Sorry, couldn't delete the company with such id!");
+                Console.WriteLine("Sorry, couldn't delete the name with such id!");
             }
         }
         public static void GetAll()
         {
             for (var i = 0; i < companies.Count; i++)
             {
-                Console.WriteLine($"{companies[i].id} {companies[i].company}");
+                Console.WriteLine($"{companies[i].id} {companies[i].name}");
             }
         }
 
@@ -79,11 +79,11 @@ namespace Tickets
             try
             {
                 int index = companies.FindIndex(x => x.id == i);
-                Console.WriteLine($"{companies[index].id} {companies[index].company}");
+                Console.WriteLine($"{companies[index].id} {companies[index].name}");
             }
             catch
             {
-                Console.WriteLine("Sorry, couldn't find the company with such id!");
+                Console.WriteLine("Sorry, couldn't find the name with such id!");
             }
         }
     }
