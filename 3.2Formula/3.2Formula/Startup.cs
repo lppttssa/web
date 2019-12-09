@@ -23,10 +23,15 @@ namespace _3._2Formula
         {
             double x = 15;
             double y = 13;
+            double z = 0;
+            app.Use(async (context, next) =>
+            {
+                z = Math.Sin(x) / x + Math.Log(5) / y + y * Math.Cos(y);
+                await next.Invoke();
+            });
             app.Run(async (context) =>
             {
-                x = Math.Sin(x) / x + Math.Log(5) / y + y * Math.Cos(y);
-                await context.Response.WriteAsync($"Result: {x}");
+                await context.Response.WriteAsync($"sin(x) / x + log(5) / y + y * cos(y) = {z}");
             });
         }
     }
