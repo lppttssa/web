@@ -1,0 +1,32 @@
+﻿@model IEnumerable<_4Task.Models.City>
+@{
+    //ViewData["Title"] = "Список смартфонов";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Города</title>
+</head>
+<body>
+    <h3>Города</h3>
+    <table>
+        <tr>
+            <td>Название</td>
+        </tr>
+        @foreach (var city in Model)
+        {
+            <tr>
+                <td>@city.name</td>
+                <td><a href="~/Home/Edit/@city.id">Изменить</a></td>
+            </tr>
+        }
+        <tr>
+            <td>        
+                <a href="~/Home/Create">Добавить</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

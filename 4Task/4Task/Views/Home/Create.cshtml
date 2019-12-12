@@ -1,0 +1,17 @@
+﻿@model _4Task.Models.City
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Новая книга</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.name, "Название города")
+    <br />
+    @Html.EditorFor(model => model.name)
+    <br />
+    <br />
+    <input type="submit" value="Добавить" />
+}
