@@ -54,3 +54,4 @@ C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\4Task.dll
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\4Task.pdb
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Edit.cshtml.g.cs
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Create.cshtml.g.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Delete.cshtml.g.cs

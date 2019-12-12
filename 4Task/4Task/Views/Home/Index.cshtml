@@ -17,10 +17,11 @@
         </tr>
         @foreach (var city in Model)
         {
-            <tr>
-                <td>@city.name</td>
-                <td><a href="~/Home/Edit/@city.id">Изменить</a></td>
-            </tr>
+    <tr>
+        <td>@city.name</td>
+        <td><a href="~/Home/Edit/@city.id">Изменить</a></td>
+        <td><a href="~/Home/Delete/@city.id">Удалить</a></td>
+    </tr>
         }
         <tr>
             <td>        
