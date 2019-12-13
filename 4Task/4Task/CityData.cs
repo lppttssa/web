@@ -27,7 +27,30 @@ namespace _4Task
                     }
                 );
                 context.SaveChanges();
+
+                context.Pilots.AddRange(
+                   new Pilot
+                   {
+                       name = "John",
+                       company = "USA Airlines",
+                       exp = 3
+                   },
+                   new Pilot
+                   {
+                       name = "Leon",
+                       company = "Aeroflot",
+                       exp = 2
+                   },
+                   new Pilot
+                   {
+                       name = "Hiro",
+                       company = "Korean Air",
+                       exp = 8
+                   }
+               );
+                context.SaveChanges();
             }
+
         }
     }
 }

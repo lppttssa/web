@@ -1,0 +1,30 @@
+﻿@model IEnumerable<_4Task.Models.Pilot>
+@{
+    //ViewData["Title"] = "Список смартфонов";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Пилоты</title>
+</head>
+<body>
+    <h3>Пилоты</h3>
+    <table>
+        <tr>
+            <td>Имя</td>
+            <td>Компания</td>
+            <td>Опыт</td>
+        </tr>
+        @foreach (var pilot in Model)
+        {
+            <tr>
+                <td>@pilot.name</td>
+                <td>@pilot.company</td>
+                <td>@pilot.exp</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

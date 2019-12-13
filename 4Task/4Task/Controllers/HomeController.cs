@@ -22,6 +22,11 @@ namespace _4Task.Controllers
             return View(db.Cities.ToList());
         }
 
+        public IActionResult Index_Pilot()
+        {
+            return View(db.Pilots.ToList());
+        }
+
         //для Едита
         [HttpGet]
         public IActionResult Edit(int? id)
@@ -80,6 +85,7 @@ namespace _4Task.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
 
     }
 }
