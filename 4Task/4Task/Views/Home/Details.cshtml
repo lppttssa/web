@@ -1,0 +1,25 @@
+﻿@model _4Task.Models.Pilot
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Пилот</h2>
+
+<div>
+    <h4>Пилот</h4>
+    <hr />
+    <form method="post" class="form-horizontal" role="form">
+        <p>Book Fields:</p>
+        <div class="form-group">
+            <label for="User" class="col-md-2 control-label">Id:</label>
+            <div class="col-md-4">
+                <input type="text" name="Id" class="form-control" value="@ViewBag.Pilot.id" disabled>
+            </div>
+        </div>
+    </form>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

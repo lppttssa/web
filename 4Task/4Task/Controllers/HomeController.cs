@@ -86,6 +86,76 @@ namespace _4Task.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Details (int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index_pilot");
+            }
+            Pilot pilot = db.Pilots.Find(id);
+            if (pilot == null)
+            {
+                return RedirectToAction("Index_pilot");
+            }
+            return View(pilot);
+        }
+
+        [HttpGet]
+        public IActionResult Edit_pilot(int? id)
+        {
+            if (id == null) return RedirectToAction("Index");
+            Pilot pilot = db.Pilots.Find(id);
+            if (pilot != null)
+            {
+                return View(pilot);
+            }
+            return RedirectToAction("Index_pilot");
+        }
+        [HttpPost]
+        public ActionResult Edit_pilot(Pilot pilot)
+        {
+            db.Entry(pilot).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index_pilot");
+        }
+
+        [HttpGet]
+        public ActionResult Delete_pilot(int id)
+        {
+            Pilot ForDelete = db.Pilots.Find(id);
+            if (ForDelete == null)
+            {
+                return RedirectToAction("Index_pilot");
+            }
+            return View(ForDelete);
+        }
+        [HttpPost, ActionName("Delete_pilot")]
+        public ActionResult DeleteConfirmed_pilot(int id)
+        {
+            Pilot ForDelete = db.Pilots.Find(id);
+            if (ForDelete == null)
+            {
+                return RedirectToAction("Index_pilot");
+            }
+            db.Pilots.Remove(ForDelete);
+            db.SaveChanges();
+            return RedirectToAction("Index_pilot");
+        }
+
+        //для добавления
+        [HttpGet]
+        public ActionResult Create_pilot()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create_pilot(Pilot pilot)
+        {
+            db.Pilots.Add(pilot);
+            db.SaveChanges();
+
+            return RedirectToAction("Index_pilot");
+        }
 
     }
 }

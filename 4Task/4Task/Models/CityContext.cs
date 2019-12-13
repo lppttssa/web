@@ -10,7 +10,6 @@ namespace _4Task.Models
     {
         public DbSet<City> Cities { get; set; }
         public DbSet<Pilot> Pilots { get; set; }
-        //public DbSet<Order> Orders { get; set; }
 
         public CityContext(DbContextOptions<CityContext> options)
             : base(options)

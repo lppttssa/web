@@ -14,17 +14,35 @@
     <table>
         <tr>
             <td>Имя</td>
-            <td>Компания</td>
-            <td>Опыт</td>
         </tr>
         @foreach (var pilot in Model)
         {
             <tr>
                 <td>@pilot.name</td>
-                <td>@pilot.company</td>
-                <td>@pilot.exp</td>
+                <td>
+                    <button>
+                        <a href="~/Home/Details/@pilot.id">Детали</a>
+                    </button>
+                </td>
+                <td>
+                    <button>
+                        <a href="~/Home/Edit_pilot/@pilot.id">Изменить</a>
+                    </button>
+                </td>
+                <td>
+                    <button>
+                        <a href="~/Home/Delete_pilot/@pilot.id">Удалить</a>
+                    </button>
+                </td>
             </tr>
-        }
+            }
+        <tr>
+            <td>
+            <button>
+                <a href="~/Home/Create_pilot">Добавить</a>
+            </button>
+            </td>
+        </tr>
     </table>
 </body>
 </html>

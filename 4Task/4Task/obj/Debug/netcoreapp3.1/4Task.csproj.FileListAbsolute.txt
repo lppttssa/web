@@ -129,3 +129,7 @@ C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\bin\Debug\netcoreapp3.1\tr\Micros
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\4Task.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Create_pilot.cshtml.g.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Edit_pilot.cshtml.g.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Delete_pilot.cshtml.g.cs
