@@ -11,6 +11,15 @@
 </head>
 <body>
     <h3>Пилоты</h3>
+    <form asp-controller="Home" asp-action="Index_pilot">
+        <p>
+            <input type="text" name="SearchString">
+            <input type="submit" value="Поиск" />
+        </p>
+    </form>
+    <p>
+        <a asp-action="Create_pilot">Добавить</a>
+    </p>
     <table>
         <tr>
             <td>Имя</td>
@@ -35,14 +44,7 @@
                     </button>
                 </td>
             </tr>
-            }
-        <tr>
-            <td>
-            <button>
-                <a href="~/Home/Create_pilot">Добавить</a>
-            </button>
-            </td>
-        </tr>
+        }
     </table>
 </body>
 </html>

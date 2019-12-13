@@ -17,27 +17,39 @@ namespace _4Task.Controllers
         {
             db = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(db.Cities.ToList());
+            var cities = from m in db.Cities
+                       select m;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                cities = cities.Where(s => s.name.Contains(searchString));
+            }
+            return View(await cities.ToListAsync());
         }
 
-        public IActionResult Index_Pilot()
+        public async Task<IActionResult> Index_pilot(string searchString)
         {
-            return View(db.Pilots.ToList());
+            var pilots = from m in db.Pilots
+                         select m;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                pilots = pilots.Where(s => s.name.Contains(searchString) || s.company.Contains(searchString)); //|| pilots.Where(s => s.company.Contains(searchString)));
+            }
+            return View(await pilots.ToListAsync());
         }
 
         //для Едита
         [HttpGet]
         public IActionResult Edit(int? id)
         {
-            if (id == null) return RedirectToAction("Index");
+            if (id == null) return NotFound();
             City city = db.Cities.Find(id);
             if (city != null)
             {
                 return View(city);
             }
-            return RedirectToAction("Index");
+            return NotFound();
         }
         [HttpPost]
         public ActionResult Edit(City city)
@@ -56,6 +68,10 @@ namespace _4Task.Controllers
         [HttpPost]
         public ActionResult Create(City city)
         {
+            if (db.Cities.Contains(city))
+            {
+                return BadRequest();
+            }
             db.Cities.Add(city);
             db.SaveChanges();
 
@@ -64,12 +80,16 @@ namespace _4Task.Controllers
 
         //для удаления
         [HttpGet]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
             City ForDelete = db.Cities.Find(id);
             if (ForDelete == null)
             {
-                return RedirectToAction("Index");
+                return NotFound();
             }
             return View(ForDelete);
         }
@@ -79,7 +99,7 @@ namespace _4Task.Controllers
             City ForDelete = db.Cities.Find(id);
             if (ForDelete == null)
             {
-                return RedirectToAction("Index");
+                return NotFound();
             }
             db.Cities.Remove(ForDelete);
             db.SaveChanges();
@@ -103,13 +123,13 @@ namespace _4Task.Controllers
         [HttpGet]
         public IActionResult Edit_pilot(int? id)
         {
-            if (id == null) return RedirectToAction("Index");
+            if (id == null) return NotFound();
             Pilot pilot = db.Pilots.Find(id);
             if (pilot != null)
             {
                 return View(pilot);
             }
-            return RedirectToAction("Index_pilot");
+            return NotFound();
         }
         [HttpPost]
         public ActionResult Edit_pilot(Pilot pilot)
@@ -120,12 +140,16 @@ namespace _4Task.Controllers
         }
 
         [HttpGet]
-        public ActionResult Delete_pilot(int id)
+        public ActionResult Delete_pilot(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
             Pilot ForDelete = db.Pilots.Find(id);
             if (ForDelete == null)
             {
-                return RedirectToAction("Index_pilot");
+                return NotFound();
             }
             return View(ForDelete);
         }
@@ -151,11 +175,14 @@ namespace _4Task.Controllers
         [HttpPost]
         public ActionResult Create_pilot(Pilot pilot)
         {
+            if (db.Pilots.Contains(pilot))
+            {
+                return BadRequest();
+            }
             db.Pilots.Add(pilot);
             db.SaveChanges();
 
             return RedirectToAction("Index_pilot");
         }
-
     }
 }
