@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Каталог товаров";
+}
+<h3>Лапши</h3>
+<table class="table-condensed" bgcolor="yellow">
+    <tr>
+        <td>Название</td>
+        <td>Производитель</td>
+        <td>Цена</td>
+        <td></td>
+    </tr>
+    @foreach (var noodle in Model)
+    {
+        <tr>
+            <td>@noodle.Name</td>
+            <td>@noodle.Company</td>
+            <td>@noodle.Price</td>
+            <td><a href="~/Home/Buy/@noodle.Id">Купить</a></td>
+        </tr>
+    }
+</table>
