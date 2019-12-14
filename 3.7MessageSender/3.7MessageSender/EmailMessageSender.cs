@@ -12,6 +12,10 @@ namespace _3._7MessageSender.Models
         public EmailMessageSender(HttpContext context)
         {
             text = context.Session.GetString("text");
+            if (text == null)
+            {
+                context.Session.SetString("text", "Hiiiii");
+            }
         }
         public string Send()
         {
