@@ -10,29 +10,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace _3._4Formula
 {
-    public class TokenMiddleware
-    {
-        private readonly RequestDelegate _next;
-
-        public TokenMiddleware(RequestDelegate next)
-        {
-            this._next = next;
-        }
-
-        public async Task InvokeAsync(HttpContext context)
-        {
-            var token = context.Request.Query["token"];
-            if (token != "kek")
-            {
-                context.Response.StatusCode = 403;
-                await context.Response.WriteAsync("Token is invalid");
-            }
-            else
-            {
-                await _next.Invoke(context);
-            }
-        }
-    }
+   
     public class Startup
     {
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -44,16 +22,7 @@ namespace _3._4Formula
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseMiddleware<TokenMiddleware>();
-
-            app.Run(async (context) =>
-            {
-                double x = 15;
-                double y = 13;
-                double z = 0;
-                z = Math.Sin(x) / x + Math.Log(5) / y + y * Math.Cos(y);
-                await context.Response.WriteAsync($"sin({x}) / {x} + log(5) / {y} + {y} * cos({y}) = {z}");
-            });
+            app.UseToken();
         }
     }
 }
