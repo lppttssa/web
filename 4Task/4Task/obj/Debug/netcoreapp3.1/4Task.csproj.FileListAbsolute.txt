@@ -54,7 +54,6 @@ C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\4Task.pdb
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Edit.cshtml.g.cs
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Create.cshtml.g.cs
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Delete.cshtml.g.cs
-C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index_Pilot.cshtml.g.cs
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -129,7 +128,8 @@ C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\bin\Debug\netcoreapp3.1\tr\Micros
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\4Task.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs
-C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Create_pilot.cshtml.g.cs
-C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Edit_pilot.cshtml.g.cs
-C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Home\Delete_pilot.cshtml.g.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Pilot\Create_pilot.cshtml.g.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Pilot\Delete_pilot.cshtml.g.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Pilot\Details.cshtml.g.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Pilot\Edit_pilot.cshtml.g.cs
+C:\Users\lpptt\Desktop\3sem\C#\web\4Task\4Task\obj\Debug\netcoreapp3.1\Razor\Views\Pilot\Index_Pilot.cshtml.g.cs
