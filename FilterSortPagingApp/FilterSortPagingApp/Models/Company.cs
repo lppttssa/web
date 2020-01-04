@@ -10,10 +10,10 @@ namespace FilterSortPagingApp.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public List<User> Users { get; set; }
+        public List<Pilot> Pilots { get; set; }
         public Company()
         {
-            Users = new List<User>();
+            Pilots = new List<Pilot>();
         }
     }
 }

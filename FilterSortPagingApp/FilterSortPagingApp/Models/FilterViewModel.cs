@@ -22,8 +22,8 @@ namespace FilterSortPagingApp.Models
     {
         NameAsc,    // по имени по возрастанию
         NameDesc,   // по имени по убыванию
-        AgeAsc, // по возрасту по возрастанию
-        AgeDesc,    // по возрасту по убыванию
+        ExpAsc, // по возрасту по возрастанию
+        ExpDesc,    // по возрасту по убыванию
         CompanyAsc, // по компании по возрастанию
         CompanyDesc // по компании по убыванию
     }

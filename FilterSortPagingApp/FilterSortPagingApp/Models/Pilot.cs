@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace FilterSortPagingApp.Models
 {
-    public class User
+    public class Pilot
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public int exp { get; set; }
         public int CompanyId { get; set; }
         public Company Company { get; set; }
     }

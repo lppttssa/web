@@ -2,11 +2,11 @@
 
 namespace FilterSortPagingApp.Models
 {
-    public class UsersContext : DbContext
+    public class PilotsContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<Pilot> Pilots { get; set; }
         public DbSet<Company> Companies { get; set; }
-        public UsersContext(DbContextOptions<UsersContext> options)
+        public PilotsContext(DbContextOptions<PilotsContext> options)
             : base(options)
         {
             Database.EnsureCreated();

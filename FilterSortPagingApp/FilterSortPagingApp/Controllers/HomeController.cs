@@ -11,29 +11,26 @@ namespace FilterSortPagingApp.Controllers
 {
     public class HomeController : Controller
     {
-        UsersContext db;
-        public HomeController(UsersContext context)
+        PilotsContext db;
+        public HomeController(PilotsContext context)
         {
             this.db = context;
             // добавляем начальные данные
             if (db.Companies.Count() == 0)
             {
-                Company oracle = new Company { Name = "Oracle" };
-                Company google = new Company { Name = "Google" };
-                Company microsoft = new Company { Name = "Microsoft" };
-                Company apple = new Company { Name = "Apple" };
+                Company Aeroflot = new Company { Name = "Aeroflot" };
+                Company KoreanAir = new Company { Name = "Korean Air" };
+                Company S7 = new Company { Name = "S7" };
 
-                User user1 = new User { Name = "Олег Васильев", Company = oracle, Age = 26 };
-                User user2 = new User { Name = "Александр Овсов", Company = oracle, Age = 24 };
-                User user3 = new User { Name = "Алексей Петров", Company = microsoft, Age = 25 };
-                User user4 = new User { Name = "Иван Иванов", Company = microsoft, Age = 26 };
-                User user5 = new User { Name = "Петр Андреев", Company = microsoft, Age = 23 };
-                User user6 = new User { Name = "Василий Иванов", Company = google, Age = 23 };
-                User user7 = new User { Name = "Олег Кузнецов", Company = google, Age = 25 };
-                User user8 = new User { Name = "Андрей Петров", Company = apple, Age = 24 };
+                Pilot pilot1 = new Pilot { name = "Yury Noskov", Company = Aeroflot, exp = 6 };
+                Pilot pilot2 = new Pilot { name = "Leonid Babich", Company = S7, exp = 4 };
+                Pilot pilot3 = new Pilot { name = "Temofey Trubyts", Company = S7, exp = 5 };
+                Pilot pilot4 = new Pilot { name = "Ivan Ivanov", Company = Aeroflot, exp = 10 };
+                Pilot pilot5 = new Pilot { name = "Si Lee", Company = KoreanAir, exp = 3 };
+                Pilot pilot6 = new Pilot { name = "Honsol Keity", Company = KoreanAir, exp = 2 };
 
-                db.Companies.AddRange(oracle, microsoft, google, apple);
-                db.Users.AddRange(user1, user2, user3, user4, user5, user6, user7, user8);
+                db.Companies.AddRange(Aeroflot, KoreanAir, S7);
+                db.Pilots.AddRange(pilot1, pilot2, pilot3, pilot4, pilot5, pilot6);
                 db.SaveChanges();
             }
         }
@@ -43,43 +40,43 @@ namespace FilterSortPagingApp.Controllers
             int pageSize = 3;
 
             //фильтрация
-            IQueryable<User> users = db.Users.Include(x => x.Company);
+            IQueryable<Pilot> pilots = db.Pilots.Include(x => x.Company);
 
             if (company != null && company != 0)
             {
-                users = users.Where(p => p.CompanyId == company);
+                pilots = pilots.Where(p => p.CompanyId == company);
             }
             if (!String.IsNullOrEmpty(name))
             {
-                users = users.Where(p => p.Name.Contains(name));
+                pilots = pilots.Where(p => p.name.Contains(name));
             }
 
             // сортировка
             switch (sortOrder)
             {
                 case SortState.NameDesc:
-                    users = users.OrderByDescending(s => s.Name);
+                    pilots = pilots.OrderByDescending(s => s.name);
                     break;
-                case SortState.AgeAsc:
-                    users = users.OrderBy(s => s.Age);
+                case SortState.ExpAsc:
+                    pilots = pilots.OrderBy(s => s.exp);
                     break;
-                case SortState.AgeDesc:
-                    users = users.OrderByDescending(s => s.Age);
+                case SortState.ExpDesc:
+                    pilots = pilots.OrderByDescending(s => s.exp);
                     break;
                 case SortState.CompanyAsc:
-                    users = users.OrderBy(s => s.Company.Name);
+                    pilots = pilots.OrderBy(s => s.Company.Name);
                     break;
                 case SortState.CompanyDesc:
-                    users = users.OrderByDescending(s => s.Company.Name);
+                    pilots = pilots.OrderByDescending(s => s.Company.Name);
                     break;
                 default:
-                    users = users.OrderBy(s => s.Name);
+                    pilots = pilots.OrderBy(s => s.name);
                     break;
             }
 
             // пагинация
-            var count = await users.CountAsync();
-            var items = await users.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+            var count = await pilots.CountAsync();
+            var items = await pilots.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
             // формируем модель представления
             IndexViewModel viewModel = new IndexViewModel
@@ -87,7 +84,7 @@ namespace FilterSortPagingApp.Controllers
                 PageViewModel = new PageViewModel(count, page, pageSize),
                 SortViewModel = new SortViewModel(sortOrder),
                 FilterViewModel = new FilterViewModel(db.Companies.ToList(), company, name),
-                Users = items
+                Pilots = items
             };
             return View(viewModel);
         }

@@ -25,8 +25,8 @@ namespace FilterSortPagingApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string connection = "Server=(localdb)\\mssqllocaldb; Database=userstoredb; Trusted_Connection=true;";
-            services.AddDbContext<UsersContext>(options => options.UseSqlServer(connection));
+            string connection = "Server=(localdb)\\mssqllocaldb; Database=pilotsdb; Trusted_Connection=true;";
+            services.AddDbContext<PilotsContext>(options => options.UseSqlServer(connection));
             services.AddControllersWithViews();
         }
 

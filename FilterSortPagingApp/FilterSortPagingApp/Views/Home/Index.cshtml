@@ -29,7 +29,7 @@
         content: "\f053";
     }
 </style>
-<h1>Список пользователей</h1>
+<h1>Список пилотов</h1>
 <form method="get">
     <div class="form-inline">
         <label>Имя: </label>
@@ -51,9 +51,9 @@
                asp-route-company="@(Model.FilterViewModel.SelectedCompany)">Имя</a>
         </th>
         <th>
-            <a asp-action="Index" asp-route-sortOrder="@(Model.SortViewModel.AgeSort)"
+            <a asp-action="Index" asp-route-sortOrder="@(Model.SortViewModel.ExpSort)"
                asp-route-name="@(Model.FilterViewModel.SelectedName)"
-               asp-route-company="@(Model.FilterViewModel.SelectedCompany)">Возраст</a>
+               asp-route-company="@(Model.FilterViewModel.SelectedCompany)">Опыт</a>
         </th>
         <th>
             <a asp-action="Index" asp-route-sortOrder="@(Model.SortViewModel.CompanySort)"
@@ -61,9 +61,9 @@
                asp-route-company="@(Model.FilterViewModel.SelectedCompany)">Компания</a>
         </th>
     </tr>
-    @foreach (User u in Model.Users)
+    @foreach (Pilot u in Model.Pilots)
     {
-        <tr><td>@u.Name</td><td>@u.Age</td><td>@u.Company.Name</td></tr>
+        <tr><td>@u.name</td><td>@u.exp</td><td>@u.Company.Name</td></tr>
     }
 </table>
 @if (Model.PageViewModel.HasPreviousPage)
