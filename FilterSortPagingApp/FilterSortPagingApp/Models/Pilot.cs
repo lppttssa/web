@@ -10,7 +10,7 @@ namespace FilterSortPagingApp.Models
         public int id { get; set; }
         public string name { get; set; }
         public int exp { get; set; }
-        public int CompanyId { get; set; }
-        public Company Company { get; set; }
+        public int CityId { get; set; }
+        public City City { get; set; }
     }
 }

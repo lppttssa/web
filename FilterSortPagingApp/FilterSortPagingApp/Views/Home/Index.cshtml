@@ -35,8 +35,8 @@
         <label>Имя: </label>
         <input name="name" value="@Model.FilterViewModel.SelectedName" class="form-control" />
 
-        <label>Компания: </label>
-        <select name="company" asp-items="Model.FilterViewModel.Companies" class="form-control"></select>
+        <label>Город: </label>
+        <select name="city" asp-items="Model.FilterViewModel.Cities" class="form-control"></select>
 
         <input type="submit" value="Фильтр" class="btn btn-outline-dark" />
     </div>
@@ -48,22 +48,22 @@
             <a asp-action="Index"
                asp-route-sortOrder="@(Model.SortViewModel.NameSort)"
                asp-route-name="@(Model.FilterViewModel.SelectedName)"
-               asp-route-company="@(Model.FilterViewModel.SelectedCompany)">Имя</a>
+               asp-route-company="@(Model.FilterViewModel.SelectedCity)">Имя</a>
         </th>
         <th>
             <a asp-action="Index" asp-route-sortOrder="@(Model.SortViewModel.ExpSort)"
                asp-route-name="@(Model.FilterViewModel.SelectedName)"
-               asp-route-company="@(Model.FilterViewModel.SelectedCompany)">Опыт</a>
+               asp-route-company="@(Model.FilterViewModel.SelectedCity)">Опыт</a>
         </th>
         <th>
             <a asp-action="Index" asp-route-sortOrder="@(Model.SortViewModel.CompanySort)"
                asp-route-name="@(Model.FilterViewModel.SelectedName)"
-               asp-route-company="@(Model.FilterViewModel.SelectedCompany)">Компания</a>
+               asp-route-company="@(Model.FilterViewModel.SelectedCity)">Компания</a>
         </th>
     </tr>
     @foreach (Pilot u in Model.Pilots)
     {
-        <tr><td>@u.name</td><td>@u.exp</td><td>@u.Company.Name</td></tr>
+        <tr><td>@u.name</td><td>@u.exp</td><td>@u.City.Name</td></tr>
     }
 </table>
 @if (Model.PageViewModel.HasPreviousPage)
@@ -71,7 +71,7 @@
     <a asp-action="Index"
        asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
        asp-route-name="@(Model.FilterViewModel.SelectedName)"
-       asp-route-company="@(Model.FilterViewModel.SelectedCompany)"
+       asp-route-company="@(Model.FilterViewModel.SelectedCity)"
        asp-route-sortorder="@(Model.SortViewModel.Current)"
        class="btn  btn-outline-dark">
         <i class="glyphicon glyphicon-chevron-left"></i>
@@ -83,7 +83,7 @@
     <a asp-action="Index"
        asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
        asp-route-name="@(Model.FilterViewModel.SelectedName)"
-       asp-route-company="@(Model.FilterViewModel.SelectedCompany)"
+       asp-route-company="@(Model.FilterViewModel.SelectedCity)"
        asp-route-sortorder="@(Model.SortViewModel.Current)"
        class="btn btn-outline-dark">
         Вперед
