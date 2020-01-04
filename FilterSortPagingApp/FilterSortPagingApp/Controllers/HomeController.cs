@@ -22,15 +22,15 @@ namespace FilterSortPagingApp.Controllers
                 City Tokyo = new City { Name = "Tokyo" };
                 City Paris = new City { Name = "Paris" };
 
-                Pilot pilot1 = new Pilot { name = "Yury Noskov", City = Moscow, exp = 6 };
-                Pilot pilot2 = new Pilot { name = "Leonid Babich", City = Tokyo, exp = 4 };
-                Pilot pilot3 = new Pilot { name = "Temofey Trubyts", City = Tokyo, exp = 5 };
-                Pilot pilot4 = new Pilot { name = "Ivan Ivanov", City = Moscow, exp = 10 };
-                Pilot pilot5 = new Pilot { name = "Si Lee", City = Paris, exp = 3 };
-                Pilot pilot6 = new Pilot { name = "Honsol Keity", City = Paris, exp = 2 };
-                Pilot pilot7 = new Pilot { name = "Mickael Keity", City = Moscow, exp = 11 };
-                Pilot pilot8 = new Pilot { name = "Lee Keity", City = Moscow, exp = 8 };
-                Pilot pilot9 = new Pilot { name = "Boris Keity", City = Paris, exp = 1 };
+                Pilot pilot1 = new Pilot { name = "Yury Noskov", City = Moscow, exp = 6, CreationDate = DateTime.Now};
+                Pilot pilot2 = new Pilot { name = "Leonid Babich", City = Tokyo, exp = 4, CreationDate = DateTime.Now };
+                Pilot pilot3 = new Pilot { name = "Temofey Trubyts", City = Tokyo, exp = 5, CreationDate = DateTime.Now };
+                Pilot pilot4 = new Pilot { name = "Ivan Ivanov", City = Moscow, exp = 10, CreationDate = DateTime.Now };
+                Pilot pilot5 = new Pilot { name = "Si Lee", City = Paris, exp = 3, CreationDate = DateTime.Now };
+                Pilot pilot6 = new Pilot { name = "Honsol Keity", City = Paris, exp = 2, CreationDate = DateTime.Now };
+                Pilot pilot7 = new Pilot { name = "Mickael Keity", City = Moscow, exp = 11, CreationDate = DateTime.Now };
+                Pilot pilot8 = new Pilot { name = "Lee Keity", City = Moscow, exp = 8, CreationDate = DateTime.Now };
+                Pilot pilot9 = new Pilot { name = "Boris Keity", City = Paris, exp = 1, CreationDate = DateTime.Now };
 
                 db.Cities.AddRange(Moscow, Tokyo, Paris);
                 db.Pilots.AddRange(pilot1, pilot2, pilot3, pilot4, pilot5, pilot6, pilot7, pilot8, pilot9);
@@ -90,6 +90,29 @@ namespace FilterSortPagingApp.Controllers
                 Pilots = items
             };
             return View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Add(Pilot pilot)
+        {
+            if (db.Pilots.Contains(pilot))
+            {
+                return BadRequest();
+            }
+            if(!db.Cities.Contains(pilot.City))
+            {
+                db.Cities.Add(pilot.City);
+            }
+            pilot.CreationDate = DateTime.Now;
+            db.Pilots.Add(pilot);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }

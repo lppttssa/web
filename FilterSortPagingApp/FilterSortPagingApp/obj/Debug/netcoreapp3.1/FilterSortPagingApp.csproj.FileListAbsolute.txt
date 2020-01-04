@@ -52,3 +52,4 @@ C:\Users\lpptt\Desktop\3sem\C#\web\FilterSortPagingApp\FilterSortPagingApp\obj\D
 C:\Users\lpptt\Desktop\3sem\C#\web\FilterSortPagingApp\FilterSortPagingApp\obj\Debug\netcoreapp3.1\FilterSortPagingApp.csproj.CopyComplete
 C:\Users\lpptt\Desktop\3sem\C#\web\FilterSortPagingApp\FilterSortPagingApp\obj\Debug\netcoreapp3.1\FilterSortPagingApp.dll
 C:\Users\lpptt\Desktop\3sem\C#\web\FilterSortPagingApp\FilterSortPagingApp\obj\Debug\netcoreapp3.1\FilterSortPagingApp.pdb
+C:\Users\lpptt\Desktop\3sem\C#\web\FilterSortPagingApp\FilterSortPagingApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Add.cshtml.g.cs

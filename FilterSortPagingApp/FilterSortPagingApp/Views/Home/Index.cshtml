@@ -58,12 +58,35 @@
         <th>
             <a asp-action="Index" asp-route-sortOrder="@(Model.SortViewModel.CompanySort)"
                asp-route-name="@(Model.FilterViewModel.SelectedName)"
-               asp-route-company="@(Model.FilterViewModel.SelectedCity)">Компания</a>
+               asp-route-company="@(Model.FilterViewModel.SelectedCity)">Город</a>
+        </th>
+        <th>
+            <a>Дни</a>
+        </th>
+        <th>
+            <a>Часы</a>
+        </th>
+        <th>
+            <a>Минуты</a>
+        </th>
+        <th>
+            <a>Секунды</a>
         </th>
     </tr>
+    <p>
+        <a asp-action="Add">Добавить</a>
+    </p>
     @foreach (Pilot u in Model.Pilots)
     {
-        <tr><td>@u.name</td><td>@u.exp</td><td>@u.City.Name</td></tr>
+        <tr>
+            <td>@u.name</td>
+            <td>@u.exp</td>
+            <td>@u.City.Name</td>
+            <td>@u.Lifetime.Days</td>
+            <td>@u.Lifetime.Hours</td>
+            <td>@u.Lifetime.Minutes</td>
+            <td>@u.Lifetime.Seconds</td>
+        </tr>
     }
 </table>
 @if (Model.PageViewModel.HasPreviousPage)
