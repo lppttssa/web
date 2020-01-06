@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lpptt\\Desktop\\3sem\\C#\\web\\6.2-6.3\\6.3\\6.3.csproj": {}
+    "C:\\Users\\lpptt\\Desktop\\3sem\\C#\\web\\6\\6.3\\6.3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lpptt\\Desktop\\3sem\\C#\\web\\6.2-6.3\\6.3\\6.3.csproj": {
+    "C:\\Users\\lpptt\\Desktop\\3sem\\C#\\web\\6\\6.3\\6.3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lpptt\\Desktop\\3sem\\C#\\web\\6.2-6.3\\6.3\\6.3.csproj",
+        "projectUniqueName": "C:\\Users\\lpptt\\Desktop\\3sem\\C#\\web\\6\\6.3\\6.3.csproj",
         "projectName": "6.3",
-        "projectPath": "C:\\Users\\lpptt\\Desktop\\3sem\\C#\\web\\6.2-6.3\\6.3\\6.3.csproj",
+        "projectPath": "C:\\Users\\lpptt\\Desktop\\3sem\\C#\\web\\6\\6.3\\6.3.csproj",
         "packagesPath": "C:\\Users\\lpptt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lpptt\\Desktop\\3sem\\C#\\web\\6.2-6.3\\6.3\\obj\\",
+        "outputPath": "C:\\Users\\lpptt\\Desktop\\3sem\\C#\\web\\6\\6.3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -43,6 +43,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.0, )"

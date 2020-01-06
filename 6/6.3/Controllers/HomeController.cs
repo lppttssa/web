@@ -31,7 +31,7 @@ namespace _6._3.Controllers
             }
         }
 
-        public IActionResult Index()
+        public IActionResult IndexEagerLoading()
         {
             var orders = db.Orders
                     .Include(u => u.Noodle)  // добавляем данные по компаниям
@@ -41,10 +41,9 @@ namespace _6._3.Controllers
 
         public IActionResult IndexExplicitLoading()
         {
-            var orders = db.Orders
-                    .Include(u => u.Noodle)  // добавляем данные по компаниям
-                    .ToList();
-            return View(orders.ToList());
+            db.Noodles.Load();
+            db.Orders.Load();
+            return View(db.Orders.ToList());
         }
     }
 }

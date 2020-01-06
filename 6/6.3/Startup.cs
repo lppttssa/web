@@ -53,7 +53,7 @@ namespace _6._3
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=IndexEagerLoading}/{id?}");
             });
         }
     }
