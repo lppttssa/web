@@ -23,7 +23,7 @@ namespace _6._3
             if (!optionsBuilder.IsConfigured)
             {
 
-                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=noodlestoredb;Trusted_Connection=True;");
+                optionsBuilder.UseLazyLoadingProxies().UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=noodlestoredb;Trusted_Connection=True;");
             }
         }
 

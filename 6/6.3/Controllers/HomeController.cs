@@ -45,5 +45,13 @@ namespace _6._3.Controllers
             db.Orders.Load();
             return View(db.Orders.ToList());
         }
+
+        public IActionResult IndexLazyLoading()
+        {
+            var orders = db.Orders.ToList();
+            var noodles = db.Noodles.ToList();
+            return View(orders.ToList());
+        }
+
     }
 }

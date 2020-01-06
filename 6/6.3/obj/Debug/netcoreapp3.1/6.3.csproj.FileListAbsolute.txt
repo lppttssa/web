@@ -172,3 +172,4 @@ C:\Users\lpptt\Desktop\3sem\C#\web\6\6.3\obj\Debug\netcoreapp3.1\Razor\Views\Hom
 C:\Users\lpptt\Desktop\3sem\C#\web\6\6.3\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\lpptt\Desktop\3sem\C#\web\6\6.3\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll
 C:\Users\lpptt\Desktop\3sem\C#\web\6\6.3\obj\Debug\netcoreapp3.1\6.3.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\lpptt\Desktop\3sem\C#\web\6\6.3\obj\Debug\netcoreapp3.1\Razor\Views\Home\IndexLazyLoading.cshtml.g.cs

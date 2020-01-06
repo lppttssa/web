@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Каталог товаров";
+}
+<h3>Заказы</h3>
+<h3>Lazy loading</h3>
+<table class="table-condensed" bgcolor="yellow">
+    <tr>
+        <td>Покупатель</td>
+        <td>Адресс</td>
+        <td>Телефон</td>
+        <td>Лапша</td>
+        <td></td>
+    </tr>
+    @foreach (var order in Model)
+    {
+        <tr>
+            <td>@order.User</td>
+            <td>@order.Address</td>
+            <td>@order.ContactPhone</td>
+            <td>@order.Noodle.Name</td>
+        </tr>
+    }
+</table>
