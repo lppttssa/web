@@ -33,56 +33,56 @@ namespace WebAPIApp.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Pilot>> Get(int id)
         {
-            Pilot user = await db.Pilots.FirstOrDefaultAsync(x => x.id == id);
-            if (user == null)
+            Pilot pilot = await db.Pilots.FirstOrDefaultAsync(x => x.id == id);
+            if (pilot == null)
                 return NotFound();
-            return new ObjectResult(user);
+            return new ObjectResult(pilot);
         }
 
         // POST api/users
         [HttpPost]
-        public async Task<ActionResult<Pilot>> Post(Pilot user)
+        public async Task<ActionResult<Pilot>> Post(Pilot pilot)
         {
-            if (user == null)
+            if (pilot == null)
             {
                 return BadRequest();
             }
 
-            db.Pilots.Add(user);
+            db.Pilots.Add(pilot);
             await db.SaveChangesAsync();
-            return Ok(user);
+            return Ok(pilot);
         }
 
         // PUT api/users/
         [HttpPut]
-        public async Task<ActionResult<Pilot>> Put(Pilot user)
+        public async Task<ActionResult<Pilot>> Put(Pilot pilot)
         {
-            if (user == null)
+            if (pilot == null)
             {
                 return BadRequest();
             }
-            if (!db.Pilots.Any(x => x.id == user.id))
+            if (!db.Pilots.Any(x => x.id == pilot.id))
             {
                 return NotFound();
             }
 
-            db.Update(user);
+            db.Update(pilot);
             await db.SaveChangesAsync();
-            return Ok(user);
+            return Ok(pilot);
         }
 
         // DELETE api/users/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Pilot>> Delete(int id)
         {
-            Pilot user = db.Pilots.FirstOrDefault(x => x.id == id);
-            if (user == null)
+            Pilot pilot = db.Pilots.FirstOrDefault(x => x.id == id);
+            if (pilot == null)
             {
                 return NotFound();
             }
-            db.Pilots.Remove(user);
+            db.Pilots.Remove(pilot);
             await db.SaveChangesAsync();
-            return Ok(user);
+            return Ok(pilot);
         }
     }
 }

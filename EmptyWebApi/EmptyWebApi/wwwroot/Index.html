@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Список пилотов</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>Список пилотов</h2>
+    <form name="pilotForm">
+        <input type="hidden" name="id" value="0" />
+        <div class="form-group col-md-5">
+            <label for="name">Имя:</label>
+            <input class="form-control" name="name" />
+        </div>
+        <div class="form-group col-md-5">
+            <label for="company">Компания:</label>
+            <input class="form-control" name="company" />
+        </div>
+        <div class="form-group col-md-5">
+            <label for="exp">Опыт:</label>
+            <input class="form-control" name="exp" type="number" />
+        </div>
+        <div class="panel-body">
+            <button type="submit" id="submit" class="btn btn-primary">Сохранить</button>
+            <a id="reset" class="btn btn-primary">Сбросить</a>
+        </div>
+    </form>
+    <table class="table table-condensed table-striped  col-md-6">
+        <thead><tr><th>Id</th><th>Имя</th><th>Компания</th><th>Опыт</th><th></th></tr></thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div>2019 © Приветик</div>
+    <script>
+        // Получение всех пользователей
+        async function GetPilots() {
+            // отправляет запрос и получаем ответ
+            const response = await fetch("/api/pilots", {
+                method: "GET",
+                headers: { "Accept": "application/json" }
+            });
+            // если запрос прошел нормально
+            if (response.ok === true) {
+                // получаем данные
+                const pilots = await response.json();
+                let rows = document.querySelector("tbody");
+                pilots.forEach(pilot => {
+                    // добавляем полученные элементы в таблицу
+                    rows.append(row(pilot));
+                });
+            }
+        }
+        // Получение одного пользователя
+        async function GetPilot(id) {
+            const response = await fetch("/api/pilots/" + id, {
+                method: "GET",
+                headers: { "Accept": "application/json" }
+            });
+            if (response.ok === true) {
+                const pilot = await response.json();
+                const form = document.forms["pilotForm"];
+                form.elements["id"].value = pilot.id;
+                form.elements["name"].value = pilot.name;
+                form.elements["company"].value = pilot.company;
+                form.elements["exp"].value = pilot.exp;
+            }
+        }
+        // Добавление пользователя
+        async function CreatePilot(pilotName, pilotCompany, pilotExp) {
+
+            const response = await fetch("api/pilots", {
+                method: "POST",
+                headers: { "Accept": "application/json", "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: pilotName,
+                    company: pilotCompany,
+                    exp: parseInt(pilotExp, 10)
+                })
+            });
+            if (response.ok === true) {
+                const pilot = await response.json();
+                reset();
+                document.querySelector("tbody").append(row(pilot));
+            }
+        }
+        // Изменение пользователя
+        async function EditPilot(pilotId, pilotName, pilotCompany, pilotExp) {
+            const response = await fetch("api/pilots", {
+                method: "PUT",
+                headers: { "Accept": "application/json", "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    id: parseInt(pilotId, 10),
+                    name: pilotName,
+                    company: pilotCompany,
+                    exp: parseInt(pilotExp, 10)
+                })
+            });
+            if (response.ok === true) {
+                const pilot = await response.json();
+                reset();
+                document.querySelector("tr[data-rowid='" + pilot.id + "']").replaceWith(row(pilot));
+            }
+        }
+        // Удаление пользователя
+        async function DeletePilot(id) {
+            const response = await fetch("/api/pilots/" + id, {
+                method: "DELETE",
+                headers: { "Accept": "application/json" }
+            });
+            if (response.ok === true) {
+                const pilot = await response.json();
+                document.querySelector("tr[data-rowid='" + pilot.id + "']").remove();
+            }
+        }
+
+        // сброс формы
+        function reset() {
+            const form = document.forms["pilotForm"];
+            form.reset();
+            form.elements["id"].value = 0;
+        }
+        // создание строки для таблицы
+        function row(pilot) {
+
+            const tr = document.createElement("tr");
+            tr.setAttribute("data-rowid", pilot.id);
+
+            const idTd = document.createElement("td");
+            idTd.append(pilot.id);
+            tr.append(idTd);
+
+            const nameTd = document.createElement("td");
+            nameTd.append(pilot.name);
+            tr.append(nameTd);
+
+            const companyTd = document.createElement("td");
+            companyTd.append(pilot.company);
+            tr.append(companyTd);
+
+            const expTd = document.createElement("td");
+            expTd.append(pilot.exp);
+            tr.append(expTd);
+
+            const linksTd = document.createElement("td");
+
+            const editLink = document.createElement("a");
+            editLink.setAttribute("data-id", pilot.id);
+            editLink.setAttribute("style", "cursor:pointer;padding:15px;");
+            editLink.append("Изменить");
+            editLink.addEventListener("click", e => {
+
+                e.preventDefault();
+                GetPilot(pilot.id);
+            });
+            linksTd.append(editLink);
+
+            const removeLink = document.createElement("a");
+            removeLink.setAttribute("data-id", pilot.id);
+            removeLink.setAttribute("style", "cursor:pointer;padding:15px;");
+            removeLink.append("Удалить");
+            removeLink.addEventListener("click", e => {
+
+                e.preventDefault();
+                DeletePilot(pilot.id);
+            });
+
+            linksTd.append(removeLink);
+            tr.appendChild(linksTd);
+
+            return tr;
+        }
+        // сброс значений формы
+        document.getElementById("reset").click(function (e) {
+
+            e.preventDefault();
+            reset();
+        })
+
+        // отправка формы
+        document.forms["pilotForm"].addEventListener("submit", e => {
+            e.preventDefault();
+            const form = document.forms["pilotForm"];
+            const id = form.elements["id"].value;
+            const name = form.elements["name"].value;
+            const company = form.elements["company"].value;
+            const exp = form.elements["exp"].value;
+            if (id == 0)
+                CreatePilot(name, company, exp);
+            else
+                EditPilot(id, name, company, exp);
+        });
+
+        // загрузка пользователей
+        GetPilots();
+
+    </script>
+</body>
+</html>
